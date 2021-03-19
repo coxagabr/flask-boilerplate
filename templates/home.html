@@ -1,0 +1,28 @@
+{% extends 'master.html' %}
+
+{% block head %}
+
+<style>
+    html{
+        background-color: lightslategray;
+        height: 100%;
+
+    }
+    body{
+        border: 1px groove black;
+        background-color: white;
+
+        width: 70%;
+        height: 100%;
+        margin: auto;
+    }
+</style>
+
+{% endblock %}
+
+{% block body %}
+
+<h1>Olá, {{session['username']}}</h1>
+<a href="{{url_for('logout')}}" >Logout</a>
+
+{% endblock %}
