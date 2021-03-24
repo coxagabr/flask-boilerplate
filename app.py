@@ -8,7 +8,6 @@ db = SQLAlchemy(app)
 login_manager = LoginManager()
 login_manager.init_app(app)
 
-
 #app precisa ser criado antes de importar views e models
 from views import *
 from models import *
@@ -16,8 +15,10 @@ from models import *
 db.drop_all()
 db.create_all()
 
-temp = User(username = 'coxagazzo', password_hash='nosalt')
+temp = User(username = 'coxagazzo', password='nosalt', email='a@b.com')
 db.session.add(temp)
+post = Post(user_id = 1, text = 'TESTANDOAAAA')
+db.session.add(post)
 db.session.commit()
 
 if __name__ == "__main__":
