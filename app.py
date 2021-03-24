@@ -19,4 +19,4 @@ temp = User(username = 'coxagazzo', password='nosalt', email='a@b.com')
 db.session.add(temp)
 
 if __name__ == "__main__":
-    app.run()
+    app.run(host='0.0.0.0')
