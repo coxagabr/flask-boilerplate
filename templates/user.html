@@ -1,5 +1,4 @@
 {% extends 'master.html' %}
-
 {% block head %}
 
 <style>
@@ -29,12 +28,7 @@
 <h1>Olá, {{session['username']}}</h1>
 <a href="{{url_for('logout')}}" >Logout</a>
 
-<form action="{{url_for('post')}}" method="POST">
-    <textarea name='postInput' cols="100" rows="10" ></textarea>
-    <p></p>
-    <button type="submit">POSTAR!</button>
-</form>
-
+<h3>Posts do {{ user.username }}</h3>
 
 {% for post in posts %}
 <div>
@@ -42,5 +36,4 @@
     <p>{{post.text}}</p>
 </div>
 {% endfor %}
-
 {% endblock %}
