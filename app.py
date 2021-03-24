@@ -12,11 +12,8 @@ login_manager.init_app(app)
 from views import *
 from models import *
 
-db.drop_all()
-db.create_all()
-
 temp = User(username = 'coxagazzo', password='nosalt', email='a@b.com')
 db.session.add(temp)
 
 if __name__ == "__main__":
-    app.run(host='0.0.0.0')
+    app.run()
