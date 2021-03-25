@@ -37,9 +37,13 @@
 
 
 {% for post in posts %}
-<div>
-    <h3>{{post.id}}</h3>
-    <p>{{post.text}}</p>
+<div class="post content">
+    <div class="time">
+        {{post.timestamp}}
+    </div>
+    <div class="text">
+        <p>{{post.text}}</p>
+    </div>
 </div>
 {% endfor %}
 

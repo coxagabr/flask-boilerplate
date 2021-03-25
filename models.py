@@ -1,5 +1,6 @@
 from app import db
 from flask_sqlalchemy import Model
+from datetime import datetime
 from flask_login import UserMixin
 from passlib.hash import sha256_crypt as hash
 
@@ -33,3 +34,7 @@ class Post(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     text = db.Column(db.String(1000))
     user_id = db.Column(db.Integer, db.ForeignKey('users.id'), nullable=False)
+    timestamp = db.Column(db.TIMESTAMP)
+
+    def __init__(self):
+        timestamp = datetime.now()
