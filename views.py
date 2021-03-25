@@ -92,6 +92,6 @@ def user_page(username):
 @login_required
 def home():
 
-    posts = Post.query.filter_by(user_id=current_user.id).all()
+    posts = Post.query.filter_by(user_id=current_user.id).order_by(Post.timestamp.desc()).all()
 
     return render_template('home.html', posts = posts)

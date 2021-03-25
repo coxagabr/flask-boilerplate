@@ -12,8 +12,5 @@ login_manager.init_app(app)
 from views import *
 from models import *
 
-temp = User(username = 'coxagazzo', password='nosalt', email='a@b.com')
-db.session.add(temp)
-
 if __name__ == "__main__":
     app.run()

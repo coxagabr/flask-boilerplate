@@ -36,5 +36,7 @@ class Post(db.Model):
     user_id = db.Column(db.Integer, db.ForeignKey('users.id'), nullable=False)
     timestamp = db.Column(db.TIMESTAMP)
 
-    def __init__(self):
-        timestamp = datetime.now()
+    def __init__(self, text, user_id):
+        self.text = text
+        self.user_id = user_id
+        self.timestamp = datetime.now()
